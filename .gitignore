@@ -10,4 +10,8 @@ __pycache__/
 Personal/
 Plots/
 Poster/
-Data/
+# Source reports: 813 MB of third-party annual reports, not
+# redistributed. Catalogue: Data/reports_manifest.csv
+Data/reports/
+SURGE.Rproj
+poster.tex

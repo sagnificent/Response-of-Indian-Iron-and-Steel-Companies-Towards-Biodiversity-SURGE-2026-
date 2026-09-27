@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it as below."
+title: "Response of Indian Iron and Steel Companies Towards Biodiversity: An LLM-Based Assessment of Corporate Biodiversity Disclosures and Alignment with the Global Biodiversity Framework"
+abstract: >-
+  An LLM-based framework for evaluating corporate biodiversity
+  disclosures in the Indian iron and steel sector. Biodiversity-related
+  statements are extracted from the FY2024-25 annual and sustainability
+  reports of 100 companies, classified as Goals, Commitments or SMART
+  Targets, and mapped to the 23 targets of the Kunming-Montreal Global
+  Biodiversity Framework. Sector materiality is derived from the ENCORE
+  framework and combined into a Biodiversity Disclosure Index.
+type: software
+authors:
+  - given-names: Sagnik
+    family-names: Roy
+    affiliation: "Indian Statistical Institute, Kolkata"
+  - given-names: Mousami
+    family-names: Prasad
+    affiliation: "Indian Institute of Technology Kanpur"
+version: "1.0.0"
+date-released: "2026-09-28"
+license: MIT
+keywords:
+  - biodiversity
+  - ESG
+  - corporate disclosure
+  - large language models
+  - Global Biodiversity Framework
+  - iron and steel
+  - India

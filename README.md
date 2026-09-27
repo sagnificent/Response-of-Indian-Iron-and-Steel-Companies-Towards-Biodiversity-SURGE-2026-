@@ -52,14 +52,31 @@ the disclosure-composition and GBF-alignment figures.
 ## Layout
 
 ```
-Data/reports/              100 annual / sustainability reports (FY2024-25)
-Data/final_outputs/        91 per-company CSVs (>=1 GBF-mapped statement)
-Data/0 statement csvs/     9 companies with no biodiversity statements
-Plots/                     exported figures
+Analysis.ipynb                     aggregation + figures
+Final Pipeline.ipynb               LLM extraction + classification
+Data/final_outputs/                91 per-company CSVs (>=1 GBF-mapped statement)
+Data/0 statement csvs/             9 companies with no biodiversity statements
+Data/reports_manifest.csv          catalogue of all 100 source reports
 company_biodiversity_summary.csv   output of Analysis.ipynb cell 0
 ```
 
 100 companies = 91 analysed + 9 with no extractable statements.
+
+### Source reports are not redistributed
+
+`Data/reports/` (813 MB, 100 PDFs, 18,596 pages) is **not** included. The
+reports are the copyright of the respective companies.
+
+`Data/reports_manifest.csv` catalogues all 100 with page counts, file sizes,
+SHA-256 checksums and source URLs, so the corpus can be reassembled from the
+original publishers (BSE, NSE, or company websites) and verified byte for
+byte. Place the PDFs in `Data/reports/` to re-run the extraction pipeline.
+
+`Analysis.ipynb` does **not** need them -- it works entirely from the
+committed CSVs, so all reported results are reproducible from this
+repository alone.
+
+Figures (`Plots/`) and the conference poster (`Poster/`) are not tracked.
 
 ## Metrics
 
@@ -87,3 +104,28 @@ The denominator (`MAX_INDEX`, = 276) is the maximum attainable score.
   re-verified exactly. `temperature=0` does not guarantee stability
   across server-side model revisions.
 - `google-generativeai` is end-of-life; migrate to `google-genai`.
+
+## Licence
+
+- **Code** (notebooks, scripts): MIT -- see `LICENSE`
+- **Derived data** (the CSVs under `Data/`, `company_biodiversity_summary.csv`):
+  CC BY 4.0 -- see `LICENSE-DATA`
+- **Source reports**: copyright of the respective companies, not
+  redistributed here
+
+## Citing
+
+See `CITATION.cff`, or use GitHub's "Cite this repository" button.
+
+## References
+
+1. Danaei, M., Gunwal, S., & Nadarajah, S. (2026). *What Companies Say vs.
+   What Matters: LLM Analysis of Biodiversity Disclosures in Oil and Gas.*
+   EarthArXiv preprint. The primary methodological reference for this work.
+2. Centre for Science and Environment (2012). *India's Best Iron and Steel
+   Company Gets Average Score; Sector is Rated Poor.*
+3. Natural Capital Finance Alliance. *ENCORE: Exploring Natural Capital
+   Opportunities, Risks and Exposure.* <https://encorenature.org>
+4. Convention on Biological Diversity (2022). *Kunming-Montreal Global
+   Biodiversity Framework: The 23 Targets.*
+   <https://www.cbd.int/gbf/targets>

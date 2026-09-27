@@ -1,0 +1,8 @@
+statement,classification,SMART,GBF_targets,company,page
+"The company is subject to the Environment Protection Act, 1986.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[14],Ashiana Ispat 2024-25,65
+"The company is subject to the Water (Prevention and Control of Pollution) Act, 1981.",Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Ashiana Ispat 2024-25,65
+"The company is subject to the Air (Prevention and Control of Pollution) Act, 1974.",Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Ashiana Ispat 2024-25,65
+"The company is subject to the Hazardous Waste (Management and Handling) Rules, 1989.",Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Ashiana Ispat 2024-25,65
+"The company is subject to the Water (Prevention and Control of Pollution) Act, 1974.",Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Ashiana Ispat 2024-25,65
+Regulatory and environmental compliance costs.,Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[15],Ashiana Ispat 2024-25,75
+"Cost includes freight, duties, taxes and other expenses directly incidental to acquisition, bringing the asset to the location and installation including site restoration up to the time when the asset is ready for intended use.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[],Ashiana Ispat 2024-25,98

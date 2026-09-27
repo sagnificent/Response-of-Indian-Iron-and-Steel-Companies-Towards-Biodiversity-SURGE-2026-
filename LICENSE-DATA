@@ -1,0 +1,22 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Sagnik Roy
+
+The extracted and derived datasets in this repository -- the per-company
+CSVs under Data/final_outputs/ and Data/0 statement csvs/,
+Data/reports_manifest.csv, and company_biodiversity_summary.csv -- are
+licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit.
+
+NOT COVERED BY THIS LICENSE
+---------------------------
+The source annual and sustainability reports that these datasets were
+derived from are the copyright of the respective companies. They are not
+redistributed in this repository. Data/reports_manifest.csv lists all 100
+reports with SHA-256 checksums and source URLs so they can be obtained
+from the original publishers.
+
+Statements quoted in the derived CSVs are short factual extracts from
+those reports, reproduced for research and analysis.

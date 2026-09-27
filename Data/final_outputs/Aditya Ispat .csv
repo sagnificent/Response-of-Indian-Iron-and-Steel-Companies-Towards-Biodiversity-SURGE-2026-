@@ -1,0 +1,7 @@
+statement,classification,SMART,GBF_targets,company,page
+The Environment Protection Act 1986,Goal,"{'Specific': False, 'Measurable': False, 'Achievable': False, 'Relevant': True, 'TimeBound': False}",[14],Aditya Ispat ,32
+The Air (Prevention & control of pollution) Act 1981,Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Aditya Ispat ,32
+Water (Prevention & control of Pollution) Act 1974,Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Aditya Ispat ,32
+"The cost saving exercise is an ongoing one with emphasis on savings in energy consumption and cost, and reduction of wastes.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}","[7, 16]",Aditya Ispat ,39
+"Cost of an item of property, plant and equipment comprises its purchase price... and estimated costs of dismantling and removing the item and restoring the site on which it is located.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[2],Aditya Ispat ,57
+"The cost of a self-constructed item of property, plant and equipment comprises... and estimated costs of dismantling and removing the item and restoring the site on which it is located.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[2],Aditya Ispat ,57

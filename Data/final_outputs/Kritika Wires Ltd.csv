@@ -1,0 +1,5 @@
+statement,classification,SMART,GBF_targets,company,page
+Shift to energy-efficient and sustainable practices; improved environmental compliance.,Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}","[8, 15]",Kritika Wires Ltd,18
+"The Environment (Protection) Act, 1986, read with the Environment (Protection) Rules, 1986.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[14],Kritika Wires Ltd,35
+"The Water (Prevention & Control of Pollution) Act, 1974, read with Water (Prevention & Control of Pollution) Rules, 1975.",Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Kritika Wires Ltd,35
+"The Air (Prevention & Control of Pollution) Act, 1981 read with Air (Prevention & Control of Pollution) Rules, 1982.",Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Kritika Wires Ltd,35

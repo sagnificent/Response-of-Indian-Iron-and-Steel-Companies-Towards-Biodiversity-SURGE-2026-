@@ -1,0 +1,5 @@
+statement,classification,SMART,GBF_targets,company,page
+Environmental concerns and carbon emission compliance impacting production processes.,Goal,"{'Specific': False, 'Measurable': False, 'Achievable': False, 'Relevant': True, 'TimeBound': False}","[8, 15]",Suraj Ltd 2024-25,36
+"The Water (Prevention and Control of Pollution) Act, 1974 is specifically applicable to the company's operations.",Commitment,"{'Specific': True, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[7],Suraj Ltd 2024-25,65
+"Providing food items, plantations and other social activities under Swachh Bharat Abhiyan in Ahmedabad, Gujarat.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}","[10, 12]",Suraj Ltd 2024-25,72
+"The company maintains wind mill assets as part of its property, plant, and equipment, contributing to renewable energy infrastructure in India.",Goal,"{'Specific': False, 'Measurable': False, 'Achievable': True, 'Relevant': True, 'TimeBound': False}",[8],Suraj Ltd 2024-25,103
