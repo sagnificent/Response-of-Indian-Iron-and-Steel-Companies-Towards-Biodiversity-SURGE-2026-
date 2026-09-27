@@ -1,0 +1,343 @@
+% ====================================================================
+%  SURGE Poster — Response of Indian Iron & Steel Companies Towards
+%  Biodiversity: An LLM-Based Assessment of Corporate Biodiversity
+%  Disclosures and Alignment with the Global Biodiversity Framework
+%
+%  Theme: Gemini (https://github.com/anishathalye/gemini)
+%  Colour theme: biodiversity (custom green palette)
+%  Compile with:  lualatex poster.tex
+% ====================================================================
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages
+% ====================
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% Poster size: 48 in (W) x 36 in (H) landscape  ->  121.92 cm x 91.44 cm
+\usepackage[size=custom,width=121.92,height=91.44,scale=1.22]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{biodiversity}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usepackage{anyfontsize}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,shapes.geometric}
+
+% tighten caption spacing to save vertical room
+\setlength{\abovecaptionskip}{1ex}
+\setlength{\belowcaptionskip}{0.5ex}
+
+% ====================
+% Lengths
+% ====================
+
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.3\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ---- helper: a compact "statistic card" ---------------------------
+\newcommand{\statcard}[3]{%
+  \begin{tikzpicture}
+    \node[draw=leafgreen,line width=1.3pt,rounded corners=8pt,
+          fill=lightgreen,text width=#3,align=center,inner sep=8pt]{%
+      {\fontsize{46}{46}\selectfont\bfseries\color{deepgreen}#1}\\[0.4ex]
+      {\normalsize\color{black!75}#2}};
+  \end{tikzpicture}}
+
+% ---- helper: coloured legend swatch -------------------------------
+\newcommand{\swatch}[1]{\tikz{\draw[fill=#1,draw=black!30,line width=0.4pt] (0,0) rectangle (0.85,0.85);}}
+
+% ====================
+% Title
+% ====================
+
+\title{Response of Indian Iron \& Steel Companies Towards Biodiversity}
+
+\author{Sagnik Roy\inst{1} \and Mousami Prasad\inst{2}}
+
+\institute[shortinst]{%
+  \inst{1} Indian Statistical Institute, Kolkata \samelineand
+  \inst{2} Indian Institute of Technology Kanpur}
+
+% ====================
+% Footer
+% ====================
+
+\footercontent{
+  SURGE Research Programme --- IIT Kanpur \hfill
+  An LLM-Based Assessment of Corporate Biodiversity Disclosures \& the Global Biodiversity Framework \hfill
+  \href{mailto:roy.sagnik.imaginer@gmail.com}{roy.sagnik.imaginer@gmail.com}}
+
+% ====================
+% Logos
+% ====================
+
+\logoleft{\tikz\node[fill=white,rounded corners=12pt,inner sep=0.5cm]{%
+  \includegraphics[height=5.2cm]{logo/iitk.png}};}
+\logoright{\tikz\node[fill=white,rounded corners=12pt,inner sep=0.5cm]{%
+  \includegraphics[height=5.2cm]{logo/isi_emblem.png}};}
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+% ==================================================================
+% COLUMN 1 — Context & Methods
+% ==================================================================
+\begin{column}{\colwidth}
+
+  \begin{block}{Background \& Motivation}
+
+    Iron \& steel production depends on nature --- water, ecosystem services,
+    waste assimilation --- yet severely harms \textbf{biodiversity} through
+    resource extraction, land \& water pollution, emissions and habitat loss.
+    In 2012 the Centre for Science \& Environment rated the Indian sector one of
+    the \textbf{poorest environmental performers} (``One Leaf'').
+
+    Rising stakeholder pressure now drives ESG and biodiversity disclosures. Yet
+    it is unclear whether these address the issues \emph{most material} to the
+    business, or translate into \textbf{measurable action}. Manual assessments
+    are limited and do not scale.
+
+    \vspace{0.4ex}
+    \begin{center}
+    \begin{tabular}{cc}
+      \statcard{100}{Companies analysed}{13.5cm} &
+      \statcard{27}{Avg.\ statements / firm}{13.5cm} \\[0.6cm]
+      \statcard{5\%}{Are SMART targets}{13.5cm} &
+      \statcard{11}{Material GBF targets}{13.5cm} \\
+    \end{tabular}
+    \end{center}
+
+  \end{block}
+
+  \begin{block}{Methodology --- an LLM Disclosure Pipeline}
+
+    We built a \textbf{Large Language Model} framework that reads the
+    FY 2024--25 reports of 100 firms (small-- to large--cap; BSE / NSE /
+    websites) and turns free text into structured, comparable data.
+
+    \vspace{0.6ex}
+    \begin{center}
+    \begin{tikzpicture}[
+      node distance = 0.8cm,
+      stage/.style = {draw=leafgreen, line width=1.4pt, rounded corners=8pt,
+                      fill=lightgreen, text width=29cm, align=center,
+                      inner sep=8pt, font=\normalsize},
+      llm/.style   = {draw=darkgreen, line width=1.6pt, rounded corners=8pt,
+                      fill=deepgreen, text=white, text width=29cm, align=center,
+                      inner sep=8pt, font=\normalsize},
+      arr/.style   = {-{Latex[length=5mm,width=4mm]}, line width=2.2pt,
+                      draw=deepgreen}]
+      \node[stage] (a) {\textbf{100 Annual \& Sustainability Reports} (FY 2024--25)};
+      \node[stage, below=of a] (b) {\textbf{Text Preprocessing} --- denoise page by page};
+      \node[llm,   below=of b] (c) {\textbf{LLM Extraction} $\cdot$ Gemini 3.1 Flash-Lite\\ keyword \& negative prompts isolate biodiversity text};
+      \node[stage, below=of c] (d) {\textbf{Classify} $\rightarrow$ Goal $\cdot$ Commitment $\cdot$ SMART (JSON)};
+      \node[stage, below=of d] (e) {\textbf{Map to GBF targets} $\cdot$ weight by ENCORE materiality};
+      \node[stage, below=of e] (f) {\textbf{Analysis} $\cdot$ composition, gaps, Disclosure Index};
+      \draw[arr] (a)--(b); \draw[arr] (b)--(c); \draw[arr] (c)--(d);
+      \draw[arr] (d)--(e); \draw[arr] (e)--(f);
+    \end{tikzpicture}
+    \end{center}
+
+  \end{block}
+
+  \begin{block}{Frameworks \& Classification}
+
+    \heading{Reference frameworks}
+    \begin{itemize}
+      \item \textbf{Kunming--Montreal GBF} --- 23 global targets to halt \&
+        reverse biodiversity loss by 2030; each statement is mapped to a target.
+      \item \textbf{ENCORE} --- maps sector impacts \& dependencies to a
+        materiality $M_i\in\{1,\dots,5\}$, used to select \& weight the GBF
+        targets relevant to iron \& steel.
+    \end{itemize}
+
+    \heading{Every statement is classified as}
+    \begin{itemize}
+      \item \swatch{amber}~\textbf{Goal} --- vague, aspirational; no metric or date.
+      \item \swatch{leafgreen}~\textbf{Commitment} --- specific intent, but rarely
+        measurable or dated.
+      \item \swatch{deepgreen}~\textbf{SMART Target} --- \emph{S}pecific,
+        \emph{M}easurable, \emph{A}chievable, \emph{R}elevant, \emph{T}ime-bound.
+    \end{itemize}
+
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+
+% ==================================================================
+% COLUMN 2 — Index & Disclosure Composition
+% ==================================================================
+\begin{column}{\colwidth}
+
+  \begin{exampleblock}{Biodiversity Disclosure Index (BDI)}
+
+    To compare firms objectively we combine the \emph{quality} of a disclosure
+    with the \emph{materiality} of the issue. For each material target
+    $i\in\mathcal{G}$ and type $\ast\in\{G,C,T\}$,
+    \[
+      I_{\ast}(i)=
+      \begin{cases}
+        1, & \text{target } i \text{ addressed by a } \ast,\\[0.2ex]
+        0, & \text{otherwise,}
+      \end{cases}
+      \qquad
+      w_G=1,\; w_C=2,\; w_T=3.
+    \]
+    With ENCORE materiality $M_i\in\{1,\dots,5\}$, normalised by the maximum
+    $6\sum_i M_i$:
+    \[
+      \boxed{\;
+      \mathrm{BDI}=
+      \frac{\displaystyle\sum_{i\in\mathcal{G}} M_i\bigl(w_G I_G(i)+w_C I_C(i)+w_T I_T(i)\bigr)}
+           {\displaystyle 6\sum_{i\in\mathcal{G}} M_i}\;}
+    \]
+    A high BDI rewards \textbf{measurable SMART targets on high-materiality
+    issues}; broad goals on minor issues score low.
+
+  \end{exampleblock}
+
+  \begin{block}{Disclosures Are Broad, Not Actionable}
+
+    Of 100 firms, \textbf{9 disclosed nothing}; the rest ranged from 1 to 269
+    statements (mean 27). Reporting is dominated by aspirational language ---
+    \textbf{55\% goals}, \textbf{33\% commitments}, only \textbf{5\% SMART
+    targets}. A few large producers, led by Tata Steel (46 SMART targets of
+    185 statements), drive almost all measurable action.
+
+    \begin{figure}
+      \centering
+      \begin{minipage}{0.5\linewidth}\centering
+        \includegraphics[width=\linewidth]{figures/p5_x9.jpeg}
+      \end{minipage}\hfill
+      \begin{minipage}{0.49\linewidth}\centering
+        \includegraphics[width=\linewidth]{figures/p6_x13.jpeg}
+      \end{minipage}
+      \caption{\textbf{Left:} average composition --- goals dominate, SMART
+        targets are rare. \textbf{Right:} top-5 vs.\ bottom-5 firms; even leaders
+        keep SMART targets (green) low.}
+    \end{figure}
+
+  \end{block}
+
+  \begin{block}{Missing the Most Material Targets}
+
+    ENCORE flags \textbf{11 GBF targets} (1, 2, 3, 4, 7, 8, 11, 12, 14, 15, 16)
+    as material, yet firms leave \textbf{$\sim$6 of 11 unaddressed} on average;
+    only Tata Steel, Jindal Stainless, JSW Steel \& APL Apollo Tubes cover all.
+
+    \begin{figure}
+      \centering
+      \begin{minipage}{0.53\linewidth}\centering
+        \includegraphics[width=\linewidth]{figures/p7_x16.jpeg}
+      \end{minipage}\hfill
+      \begin{minipage}{0.45\linewidth}\centering
+        \includegraphics[width=\linewidth]{figures/p7_x17.jpeg}
+      \end{minipage}
+      \caption{Company\,$\times$\,target map (\textcolor{blue}{blue}=addressed,
+        \textcolor{red!70!black}{red}=missing). High-materiality Targets
+        \textbf{3} \& \textbf{4} are missed by $\sim$80\% of firms.}
+    \end{figure}
+
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+
+% ==================================================================
+% COLUMN 3 — Quality, Correlation, Conclusion
+% ==================================================================
+\begin{column}{\colwidth}
+
+  \begin{block}{Reporting Follows Regulation}
+
+    The best-covered targets --- 7 (pollution) \& 15 (biodiversity in
+    governance) --- are those already enforced by law: the \emph{Environment
+    (Protection) Act 1986}, \emph{Air Act 1981} \& \emph{Water Act 1974}
+    (CPCB). Targets 3 \& 4 which focus on conservation of land and species diversity remain largely unattended.
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.66\linewidth]{figures/p7_x18.jpeg}
+      \caption{Composition for six high-materiality targets. Except Target 7
+        (pollution), \textbf{goals dominate} and SMART targets stay below 20\%.}
+    \end{figure}
+
+  \end{block}
+
+  \begin{block}{BDI Tracks Company Size \& Profitability}
+
+    Using Spearman's rank correlation (robust to outliers), higher BDI is
+    \textbf{strongly} linked to market capitalisation
+    ($\rho=0.85$, $p<2.2\times10^{-16}$) and \textbf{moderately} to net profit
+    margin ($\rho=0.42$, $p<5.6\times10^{-5}$). Larger and more profitable firms
+    appear to have more biodiversity disclosures.
+
+    \begin{figure}
+      \centering
+      \begin{minipage}{0.47\linewidth}\centering
+        \includegraphics[width=\linewidth]{figures/p8_x21.jpeg}
+      \end{minipage}\hfill
+      \begin{minipage}{0.47\linewidth}\centering
+        \includegraphics[width=\linewidth]{figures/p8_x22.jpeg}
+      \end{minipage}
+      \caption{BDI vs.\ market capitalisation (left) and net profit margin
+        (right), with fitted trends and 95\% bands.}
+    \end{figure}
+
+  \end{block}
+
+  \begin{alertblock}{Key Findings \& Policy Implications}
+
+    \begin{itemize}
+      \item Firms report on issues which are already regulated. $\sim$85\%
+        of companies talk about pollution; $<$20\% touch genetic
+        diversity, species extinction or land \& water conservation.
+      \item Disclosures are \textbf{broad \& aspirational, not accountable} --- only 5\%
+        are SMART targets.
+      \item Regulations on species extinction and land conservation should be enforced more strictly and provide support to small firms to invest in sustainable technologies.
+    \end{itemize}
+
+  \end{alertblock}
+
+  \begin{block}{References}
+    {\small
+    \begin{enumerate}\setlength{\itemsep}{0.1ex}
+      \item Danaei, M., Gunwal, S. \& Nadarajah, S. (2026). \emph{What Companies
+        Say vs.\ What Matters: LLM Analysis of Biodiversity Disclosures in Oil
+        and Gas.} EarthArXiv.
+      \item Centre for Science \& Environment (2012). \emph{India's Best Iron \&
+        Steel Company Gets Average Score.}
+      \item Natural Capital Finance Alliance. \emph{ENCORE.}
+      \item Convention on Biological Diversity (2022). \emph{Kunming--Montreal
+        GBF: The 23 Targets.}
+    \end{enumerate}}
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+\end{columns}
+\end{frame}
+\end{document}

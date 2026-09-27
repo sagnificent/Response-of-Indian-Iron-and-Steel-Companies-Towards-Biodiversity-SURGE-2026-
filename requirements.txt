@@ -1,0 +1,21 @@
+# Pinned to the versions this project was last run with
+# (Python 3.13). Install: pip install -r requirements.txt
+
+# PDF text extraction (imported as `fitz`)
+pymupdf==1.27.2.3
+
+# LLM extraction + classification
+# NOTE: this package is end-of-life upstream; migrating to
+# `google-genai` is a pending task.
+google-generativeai==0.8.6
+
+# API key loading from .env
+python-dotenv==1.2.2
+
+# Analysis
+pandas==3.0.3
+tqdm==4.67.3
+
+# Plotting
+matplotlib==3.11.1
+seaborn==0.13.2
