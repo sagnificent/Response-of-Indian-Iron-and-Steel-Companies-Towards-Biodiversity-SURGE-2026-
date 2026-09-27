@@ -67,8 +67,7 @@ company_biodiversity_summary.csv   output of Analysis.ipynb cell 0
 reports are the copyright of the respective companies.
 
 `Data/reports_manifest.csv` catalogues all 100 companies, so that the reports can be reassembled from the
-original publishers (BSE, NSE, or company websites) and verified byte for
-byte. Place the PDFs in `Data/reports/` to re-run the extraction pipeline.
+original publishers (BSE, NSE, or company websites). Place the PDFs in `Data/reports/` to re-run the extraction pipeline.
 
 `Analysis.ipynb` does **not** need them -- it works entirely from the
 committed CSVs, so all reported results are reproducible from this
