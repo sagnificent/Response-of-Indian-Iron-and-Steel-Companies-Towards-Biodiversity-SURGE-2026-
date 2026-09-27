@@ -20,8 +20,7 @@ cp .env.example .env
 # then edit .env and set GOOGLE_API_KEY=...
 ```
 
-`.env` is gitignored. Never commit a key, and never paste one into a
-notebook cell.
+`.env` is gitignored.
 
 ## Running
 
@@ -67,8 +66,7 @@ company_biodiversity_summary.csv   output of Analysis.ipynb cell 0
 `Data/reports/` (813 MB, 100 PDFs, 18,596 pages) is **not** included. The
 reports are the copyright of the respective companies.
 
-`Data/reports_manifest.csv` catalogues all 100 with page counts, file sizes,
-SHA-256 checksums and source URLs, so the corpus can be reassembled from the
+`Data/reports_manifest.csv` catalogues all 100 companies, so that the reports can be reassembled from the
 original publishers (BSE, NSE, or company websites) and verified byte for
 byte. Place the PDFs in `Data/reports/` to re-run the extraction pipeline.
 
@@ -76,7 +74,6 @@ byte. Place the PDFs in `Data/reports/` to re-run the extraction pipeline.
 committed CSVs, so all reported results are reproducible from this
 repository alone.
 
-Figures (`Plots/`) and the conference poster (`Poster/`) are not tracked.
 
 ## Metrics
 
